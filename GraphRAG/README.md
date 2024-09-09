@@ -78,3 +78,13 @@
 - 若要进行局部查询，需要对源码进行修改
 
 `pip install langchain_community        #安装依赖项`
+
+
+
+File: /graphrag/query/structured_search/global_search/search.py , method: _map_response_single_batch
+
+#search_messages = [
+#  {"role": "system", "content": search_prompt},
+#  {"role": "user", "content": query},
+#]
+search_messages = [ {"role": "user", "content": search_prompt + "\n\n### USER QUESTION ### \n\n" + query} ]
